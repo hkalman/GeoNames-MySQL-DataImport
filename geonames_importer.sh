@@ -4,6 +4,7 @@
 dbhost="localhost"
 dbport=3306
 dbname="geonames"
+countries="GR CY"
 #dir=$( cd "$( dirname "$0" )" && pwd )
 dir=`pwd`
 
@@ -43,7 +44,8 @@ usage() {
 download_geonames_data() {
 	echo "Downloading GeoNames.org data..." 
     download_folder="$1"
-    dumps="allCountries.zip alternateNames.zip hierarchy.zip admin1CodesASCII.txt admin2Codes.txt featureCodes_en.txt timeZones.txt countryInfo.txt"
+    #dumps="allCountries.zip alternateNames.zip hierarchy.zip admin1CodesASCII.txt admin2Codes.txt featureCodes_en.txt timeZones.txt countryInfo.txt"
+    dumps="hierarchy.zip admin1CodesASCII.txt admin2Codes.txt featureCodes_en.txt timeZones.txt countryInfo.txt"
     zip_codes="allCountries.zip"
     for dump in $dumps; do
         wget -c -P "$download_folder" http://download.geonames.org/export/dump/$dump
@@ -51,6 +53,10 @@ download_geonames_data() {
     for zip in $zip_codes; do
         wget -c -P "$download_folder" -O "${zip:0:(-4)}_zip.zip" http://download.geonames.org/export/zip/$zip
     done
+    for country in $countries; do
+        wget -c -P "$download_folder" http://download.geonames.org/export/dump/$country.zip
+    done
+
     unzip "*_zip.zip" -d ./zip
     rm *_zip.zip
     unzip "*.zip"

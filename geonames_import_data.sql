@@ -1,12 +1,25 @@
-LOAD DATA LOCAL INFILE 'allCountries.txt'
+/*LOAD DATA LOCAL INFILE 'allCountries.txt'
+INTO TABLE geo_geoname
+CHARACTER SET 'UTF8MB4'
+(geonameid, name, asciiname, alternatenames, latitude, longitude, fclass, fcode, country, cc2, admin1, admin2, admin3, admin4, population, elevation, gtopo30, timezone, moddate);
+*/
+
+LOAD DATA LOCAL INFILE 'GR.txt'
 INTO TABLE geo_geoname
 CHARACTER SET 'UTF8MB4'
 (geonameid, name, asciiname, alternatenames, latitude, longitude, fclass, fcode, country, cc2, admin1, admin2, admin3, admin4, population, elevation, gtopo30, timezone, moddate);
 
+LOAD DATA LOCAL INFILE 'CY.txt'
+INTO TABLE geo_geoname
+CHARACTER SET 'UTF8MB4'
+(geonameid, name, asciiname, alternatenames, latitude, longitude, fclass, fcode, country, cc2, admin1, admin2, admin3, admin4, population, elevation, gtopo30, timezone, moddate);
+
+/*
 LOAD DATA LOCAL INFILE 'alternateNames.txt'
 INTO TABLE geo_alternatename
 CHARACTER SET 'UTF8MB4'
 (alternatenameid, geonameid, isoLanguage, alternateName, isPreferredName, isShortName, isColloquial, isHistoric);
+*/
 
 LOAD DATA LOCAL INFILE 'iso-languagecodes.txt'
 INTO TABLE geo_iso_languagecodes
