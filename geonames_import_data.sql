@@ -19,13 +19,13 @@ LOAD DATA LOCAL INFILE 'alternateNames.txt'
 INTO TABLE geo_alternatename
 CHARACTER SET 'UTF8MB4'
 (alternatenameid, geonameid, isoLanguage, alternateName, isPreferredName, isShortName, isColloquial, isHistoric);
-*/
 
 LOAD DATA LOCAL INFILE 'iso-languagecodes.txt'
 INTO TABLE geo_iso_languagecodes
 CHARACTER SET 'UTF8MB4'
 IGNORE 1 LINES
 (iso_639_3, iso_639_2, iso_639_1, language_name);
+*/
 
 LOAD DATA LOCAL INFILE 'admin1CodesASCII.txt'
 INTO TABLE geo_admin1CodesAscii
@@ -65,7 +65,9 @@ CHARACTER SET 'UTF8MB4'
 FIELDS TERMINATED BY ','
 (code, name, geonameId);
 
+/*
 LOAD DATA LOCAL INFILE 'zip/allCountries.txt'
 INTO TABLE geo_postalCodes
 CHARACTER SET 'UTF8MB4'
 (country, postal_code, name, admin1_name, admin1_code, admin2_name, admin2_code, admin3_name, admin3_code, latitude, longitude, accuracy);
+*/

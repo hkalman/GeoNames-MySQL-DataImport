@@ -50,9 +50,9 @@ download_geonames_data() {
     for dump in $dumps; do
         wget -c -P "$download_folder" http://download.geonames.org/export/dump/$dump
     done
-    for zip in $zip_codes; do
-        wget -c -P "$download_folder" -O "${zip:0:(-4)}_zip.zip" http://download.geonames.org/export/zip/$zip
-    done
+    #for zip in $zip_codes; do
+    #    wget -c -P "$download_folder" -O "${zip:0:(-4)}_zip.zip" http://download.geonames.org/export/zip/$zip
+    #done
     for country in $countries; do
         wget -c -P "$download_folder" http://download.geonames.org/export/dump/$country.zip
     done
