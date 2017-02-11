@@ -5,6 +5,7 @@ dbhost="localhost"
 dbport=3306
 dbname="geonames"
 #dir=$( cd "$( dirname "$0" )" && pwd )
+dir=`pwd`
 
 download_folder="`pwd`/download"
 
@@ -109,7 +110,7 @@ if [ -z $dbpassword ]; then
 fi
 
 echo "Database parameters being used..."
-echo "Orden: " $action
+echo "Action: " $action
 echo "UserName: " $dbusername
 echo "Password: " $dbpassword
 echo "DB Host: " $dbhost

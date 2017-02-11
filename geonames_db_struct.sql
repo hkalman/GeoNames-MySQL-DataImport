@@ -3,7 +3,7 @@
 -- USE geonames;
 
 -- Create syntax for TABLE 'admin1CodesAscii'
-CREATE TABLE `admin1CodesAscii` (
+CREATE TABLE `geo_admin1CodesAscii` (
   `code` char(15) DEFAULT NULL,
   `name` text,
   `nameAscii` text,
@@ -15,7 +15,7 @@ CREATE TABLE `admin1CodesAscii` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'admin2Codes'
-CREATE TABLE `admin2Codes` (
+CREATE TABLE `geo_admin2Codes` (
   `code` char(15) DEFAULT NULL,
   `name` text,
   `nameAscii` text,
@@ -27,7 +27,7 @@ CREATE TABLE `admin2Codes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'alternatename'
-CREATE TABLE `alternatename` (
+CREATE TABLE `geo_alternatename` (
   `alternatenameId` int(11) NOT NULL,
   `geonameid` int(11) DEFAULT NULL,
   `isoLanguage` varchar(7) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `alternatename` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'continentCodes'
-CREATE TABLE `continentCodes` (
+CREATE TABLE `geo_continentCodes` (
   `code` char(2) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
   `geonameid` int(11) DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE `continentCodes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'countryinfo'
-CREATE TABLE `countryinfo` (
+CREATE TABLE `geo_countryinfo` (
   `iso_alpha2` char(2) DEFAULT NULL,
   `iso_alpha3` char(3) DEFAULT NULL,
   `iso_numeric` int(11) DEFAULT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE `countryinfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'featureCodes'
-CREATE TABLE `featureCodes` (
+CREATE TABLE `geo_featureCodes` (
   `code` char(7) DEFAULT NULL,
   `name` varchar(200) DEFAULT NULL,
   `description` text,
@@ -90,7 +90,7 @@ CREATE TABLE `featureCodes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'geoname'
-CREATE TABLE `geoname` (
+CREATE TABLE `geo_geoname` (
   `geonameid` int(11) NOT NULL,
   `name` varchar(200) DEFAULT NULL,
   `asciiname` varchar(200) DEFAULT NULL,
@@ -100,7 +100,7 @@ CREATE TABLE `geoname` (
   `fclass` char(1) DEFAULT NULL,
   `fcode` varchar(10) DEFAULT NULL,
   `country` varchar(2) DEFAULT NULL,
-  `cc2` varchar(60) DEFAULT NULL,
+  `cc2` varchar(200) DEFAULT NULL,
   `admin1` varchar(20) DEFAULT NULL,
   `admin2` varchar(80) DEFAULT NULL,
   `admin3` varchar(20) DEFAULT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE `geoname` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'hierarchy'
-CREATE TABLE `hierarchy` (
+CREATE TABLE `geo_hierarchy` (
   `parentId` int(11) DEFAULT NULL,
   `childId` int(11) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE `hierarchy` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'iso_languagecodes'
-CREATE TABLE `iso_languagecodes` (
+CREATE TABLE `geo_iso_languagecodes` (
   `iso_639_3` char(4) DEFAULT NULL,
   `iso_639_2` varchar(50) DEFAULT NULL,
   `iso_639_1` varchar(50) DEFAULT NULL,
@@ -143,14 +143,14 @@ CREATE TABLE `iso_languagecodes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'timeZones'
-CREATE TABLE `timeZones` (
+CREATE TABLE `geo_timeZones` (
   `timeZoneId` varchar(200) DEFAULT NULL,
   `GMT_offset` decimal(3,1) DEFAULT NULL,
   `DST_offset` decimal(3,1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 -- Create syntax for TABLE 'postalCodes'
-CREATE TABLE `postalCodes` (
+CREATE TABLE `geo_postalCodes` (
   `country` char(2) DEFAULT NULL,
   `postal_code` varchar(20) DEFAULT NULL,
   `name` varchar(180) DEFAULT NULL,
